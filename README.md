@@ -9,6 +9,9 @@
 # img2excel :rocket:
 Convert images into `.xlsx` files and create awesome Excel art.
 
+# Requirements
+For running the command line tool, simply [Java](https://java.com/download/) is required. When using the core module as a dependency within another project, the installation of [Lombok](https://projectlombok.org) might be necessary.
+
 # Usage
 To be done.
 
