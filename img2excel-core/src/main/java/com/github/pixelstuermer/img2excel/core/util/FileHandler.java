@@ -27,5 +27,6 @@ public class FileHandler {
    }
 
    // TODO what if no file given
+   // TODO Print metadata at end
 
 }
