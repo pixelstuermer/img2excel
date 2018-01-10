@@ -12,6 +12,6 @@ public final class ExcelConstants {
    public static final String METADATA_SHEET_NAME = "metaData";
    public static final int METADATA_SHEET_ZOOM = 100;
 
-   // TODO more metadata criteria
+   // TODO add metadata key names
 
 }

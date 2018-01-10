@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
+import com.github.pixelstuermer.img2excel.core.util.FeedbackHandler;
 import com.github.pixelstuermer.img2excel.core.util.FileHandler;
 import com.github.pixelstuermer.img2excel.core.util.ImageHandler;
 import com.github.pixelstuermer.img2excel.core.util.SheetsHandler;
@@ -19,27 +20,25 @@ public class Img2ExcelConverter {
    private FileHandler fileHandler;
    private SheetsHandler sheetsHandler;
    private ImageHandler imageHandler;
+   private FeedbackHandler feedbackHandler;
 
    public Img2ExcelConverter( File sourceFile ) {
       fileHandler = new FileHandler( sourceFile );
       sheetsHandler = new SheetsHandler();
       imageHandler = null;
+      feedbackHandler = null;
    }
 
    public void convertImageToExcel() throws IOException {
       imageHandler = new ImageHandler( fileHandler.getSourceFile() );
-
-      double counter = 0;
-      double dimension = imageHandler.getScaledDimension();
+      feedbackHandler = new FeedbackHandler( imageHandler.getScaledDimension() );
 
       for ( int i = 0; i < imageHandler.getScaledHeight(); i++ ) {
          Row row = sheetsHandler.getMainSheet().createRow( i );
          for ( int k = 0; k < imageHandler.getScaledWidth(); k++ ) {
-            counter++;
+            feedbackHandler.incrementCounter();
             Cell cell = row.createCell( k );
             cell.setCellStyle( createCellStyle( k, i ) );
-            System.out.println( "Row " + k + ", Cell " + i + " >>> "
-               + Double.valueOf( Double.valueOf( counter / dimension * 10000 ).intValue() ) / 100 + "%" );
          }
       }
 
