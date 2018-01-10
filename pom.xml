@@ -5,10 +5,13 @@
 	<groupId>com.github.pixelstuermer</groupId>
 	<artifactId>img2excel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<packaging>pom</packaging>
 
 	<name>img2excel</name>
-	<description>Convert images into Excel files</description>
-
+	<description>Convert images into Excel files (parent)</description>
+	
+	<modules>
+		<module>img2excel-core</module>
+	</modules>
+	
 </project>
