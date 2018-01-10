@@ -1,4 +1,4 @@
-package TEST;
+package com.github.pixelstuermer.img2excel.core.application;
 
 import java.io.File;
 import java.io.IOException;
