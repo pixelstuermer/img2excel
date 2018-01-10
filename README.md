@@ -19,7 +19,7 @@ To be done.
 It is recommended to use really small images. Images with the dimensions around  `50*30` pixels are great (yes, this is really small). Although the application scales bigger images down, it is best practice to scale them down before manually. Excel can only handle a limited amount of cell styles which is why images cannot be converted with their original size.
 
 # Example
-1. Download the [latest release](https://github.com/pixelstuermer/img2excel/releases/latest) of the command line tool (`img2excel-cli-{...}.jar`).
+1. Download the [latest release](https://github.com/pixelstuermer/img2excel/releases/latest) of the command line tool `img2excel-cli-{...}.jar`.
 2. Run the following command from within your terminal: `java -jar /{path}/img2excel-cli-{...}.jar /{path}/{image}.jpg`.
 3. Open the resulting `.xlsx` file after the converter has finished. It is at the same location as the input image file.
 
