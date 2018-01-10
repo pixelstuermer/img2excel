@@ -13,6 +13,7 @@ public class Img2ExcelApplicationStarter {
       java.util.Properties p = new Properties();
       p.load( is );
       String version = p.getProperty( "version" );
+
       System.out.println( version );
       Img2ExcelConverter img2ExcelConverter = new Img2ExcelConverter( new File( args[0] ) );
       img2ExcelConverter.convertImageToExcel();
