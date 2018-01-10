@@ -15,6 +15,9 @@ For running the command line tool, simply [Java](https://java.com/download/) is 
 # Usage
 To be done.
 
+# Recommendations
+To be done.
+
 # Example
 1. Download the [latest release](https://github.com/pixelstuermer/img2excel/releases/latest) of the img2excel command line interface (`img2excel-cli-{...}.jar`).
 2. Run the following command from within your terminal: `java -jar /{path}/img2excel-cli-{...}.jar /{path}/{image}.jpg`.
