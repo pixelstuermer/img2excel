@@ -3,12 +3,14 @@ package com.github.pixelstuermer.img2excel.core.util;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
+import com.github.pixelstuermer.img2excel.core.constants.FileConstants;
+
 public class FeedbackHandler {
 
    private double counter;
    private double dimension;
 
-   DecimalFormat decimalFormat;
+   private DecimalFormat decimalFormat;
 
    public FeedbackHandler( double dimension ) {
       counter = 0;
@@ -18,16 +20,18 @@ public class FeedbackHandler {
 
    private void defineDecimalFormat() {
       DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols();
-      decimalFormatSymbols.setDecimalSeparator( '.' );
+      decimalFormatSymbols.setDecimalSeparator( FileConstants.DECIMAL_FORMAT_DECIMAL_SEPARATOR );
 
-      decimalFormat = new DecimalFormat( "00.00" );
+      decimalFormat = new DecimalFormat( FileConstants.DECIMAL_FORMAT_PERCENTAGE );
       decimalFormat.setDecimalFormatSymbols( decimalFormatSymbols );
    }
 
-   public void incrementCounter() {
+   public void incrementCounter( int x, int y ) {
       counter++;
       double currentPerc = counter / dimension * 100;
-      System.out.print( decimalFormat.format( currentPerc ) + "\r" );
+      System.out.print( decimalFormat.format( currentPerc ) + "%"
+         + " (Row " + y + ", Column " + x + ")"
+         + FileConstants.FEEDBACK_CARRIAGE_RETURN );
    }
 
 }

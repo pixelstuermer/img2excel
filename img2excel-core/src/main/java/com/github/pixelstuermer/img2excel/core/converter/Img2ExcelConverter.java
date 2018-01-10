@@ -36,7 +36,7 @@ public class Img2ExcelConverter {
       for ( int i = 0; i < imageHandler.getScaledHeight(); i++ ) {
          Row row = sheetsHandler.getMainSheet().createRow( i );
          for ( int k = 0; k < imageHandler.getScaledWidth(); k++ ) {
-            feedbackHandler.incrementCounter();
+            feedbackHandler.incrementCounter( k, i );
             Cell cell = row.createCell( k );
             cell.setCellStyle( createCellStyle( k, i ) );
          }
