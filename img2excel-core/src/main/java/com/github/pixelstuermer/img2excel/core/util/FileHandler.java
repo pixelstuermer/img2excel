@@ -16,21 +16,16 @@ public class FileHandler {
    private File sourceFile;
 
    public void writeWorkbookToFile( SheetsHandler sheetsHandler ) throws IOException {
-      String plainFilename = sourceFile.getName()
-         .substring( 0, sourceFile.getName().lastIndexOf( "." ) )
-         .replace( "\\.", "-" );
-      String parentPath = sourceFile.getParent();
-      String newPath = parentPath
-         + FileConstants.PATH_SEPARATOR
-         + plainFilename
-         + "."
-         + FileConstants.EXCEL_FILE_SUFFIX;
+      String suffix = sourceFile.getName().substring( sourceFile.getName().lastIndexOf( "." ) + 1 );
+      String path = sourceFile.getAbsolutePath().replaceAll( suffix, FileConstants.EXCEL_FILE_SUFFIX );
 
-      FileOutputStream outputStream = new FileOutputStream( newPath );
+      FileOutputStream outputStream = new FileOutputStream( path );
       sheetsHandler.getWorkbook().write( outputStream );
       outputStream.flush();
       outputStream.close();
       sheetsHandler.getWorkbook().close();
    }
+
+   // TODO what if no file given
 
 }
