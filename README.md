@@ -18,6 +18,10 @@ To be done.
 3. Hit `[ENTER]`.
 4. Open the resulting `.xlsx` file after the converter has finished. It is at the same location as the input image file.
 
-Here is the full command for version `1.0.0` and the [sample file](https://raw.githubusercontent.com/pixelstuermer/img2excel/master/src/example/hamnoy_small.jpeg) `hamnoy_small.jpeg`. Therefore, we assume that both (jar and image) are located in the same folder. Also, the terminal is opened at this location:
+Here is the full command for version `1.0.0` and the [sample file](https://raw.githubusercontent.com/pixelstuermer/img2excel/master/src/example/hamnoy_small.jpeg) `hamnoy_small.jpeg`. Therefore, we assume that both (jar and image) are located in the same folder. The excel file will also be generated at this location. Also, the terminal is opened at the same folder:
 
     java -jar img2excel-cli-1.0.0.jar hamnoy_small.jpeg
+
+The command can also be executed from within any other location, giving it the absolute path of the jar and of the image. The excel file will then be stored at the location of the input file:
+
+    java -jar /some/path/img2excel-cli-1.0.0.jar /another/path/hamnoy_small.jpeg
