@@ -11,11 +11,24 @@
 	<description>Convert images into Excel files (parent)</description>
 
 	<properties>
+		<!-- jdk versions -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<!-- dependencies versions -->
 		<apache.poi.version>3.15</apache.poi.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- own project dependencies -->
+			<dependency>
+				<groupId>com.github.pixelstuermer</groupId>
+				<artifactId>img2excel-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- further dependencies -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-ooxml</artifactId>
