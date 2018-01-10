@@ -22,10 +22,10 @@ public class SheetsHandler {
    }
 
    private void setDefaultStyles() {
-      mainSheet.setDefaultColumnWidth( ExcelConstants.IMAGE_SHEET_DEFAULT_COLUMN_WIDTH );
-      mainSheet.setDefaultRowHeight( ExcelConstants.IMAGE_SHEET_DEFAULT_ROW_HEIGHT );
-      mainSheet.setZoom( ExcelConstants.IMAGE_SHEET_DEFAULT_ZOOM );
-      metaDataSheet.setZoom( ExcelConstants.METADATA_SHEET_DEFAULT_ZOOM );
+      mainSheet.setDefaultColumnWidth( ExcelConstants.MAIN_SHEET_COLUMN_WIDTH );
+      mainSheet.setDefaultRowHeight( ExcelConstants.MAIN_SHEET_ROW_HEIGHT );
+      mainSheet.setZoom( ExcelConstants.IMAGE_SHEET_ZOOM );
+      metaDataSheet.setZoom( ExcelConstants.METADATA_SHEET_ZOOM );
    }
 
 }
