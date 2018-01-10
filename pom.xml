@@ -18,6 +18,12 @@
 		<!-- dependencies versions -->
 		<apache.poi.version>3.15</apache.poi.version>
 		<lombok.version>1.16.20</lombok.version>
+
+		<!-- further properties -->
+		<settings.name>${project.name}</settings.name>
+		<settings.version>${project.version}</settings.version>
+		<settings.author>pixelstuermer</settings.author>
+		<settings.repository>https://github.com/pixelstuermer/img2excel</settings.repository>
 	</properties>
 
 	<dependencyManagement>
