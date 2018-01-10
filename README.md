@@ -10,10 +10,11 @@
 Convert images into `.xlsx` files and create awesome Excel art.
 
 # Usage
-1. Download the [latest release](https://github.com/pixelstuermer/img2excel/releases) of the img2excel command line interface (`img2excel-cli-{...}.jar` ).
-2. Run the following command from within your terminal: `java -jar /{path}/img2excel-cli-{...}.jar /{path}/{image}.jpg`.
-3. Hit `[ENTER]`.
-4. Open the resulting `.xlsx` file after the converter has finished.
+To be done.
 
 # Example
-To be done.
+1. Download the [latest release](https://github.com/pixelstuermer/img2excel/releases) of the img2excel command line interface (`img2excel-cli-{...}.jar` ).
+2. Run the following command from within your terminal:
+`java -jar /{path}/img2excel-cli-{...}.jar /{path}/{image}.jpg`.
+3. Hit `[ENTER]`.
+4. Open the resulting `.xlsx` file after the converter has finished.
