@@ -4,7 +4,7 @@
 
 	<groupId>com.github.pixelstuermer</groupId>
 	<artifactId>img2excel</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<name>img2excel</name>
