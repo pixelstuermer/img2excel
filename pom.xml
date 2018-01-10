@@ -28,6 +28,11 @@
 				<artifactId>img2excel-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+						<dependency>
+				<groupId>com.github.pixelstuermer</groupId>
+				<artifactId>img2excel-cli</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 
 			<!-- further dependencies -->
 			<dependency>
@@ -45,6 +50,7 @@
 
 	<modules>
 		<module>img2excel-core</module>
+		<module>img2excel-cli</module>
 	</modules>
 
 </project>
