@@ -28,7 +28,7 @@
 				<artifactId>img2excel-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-						<dependency>
+			<dependency>
 				<groupId>com.github.pixelstuermer</groupId>
 				<artifactId>img2excel-cli</artifactId>
 				<version>${project.version}</version>
@@ -52,5 +52,36 @@
 		<module>img2excel-core</module>
 		<module>img2excel-cli</module>
 	</modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- maven resource plugin -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>LICENSE</include>
+										<include>README.md</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

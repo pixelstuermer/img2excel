@@ -15,7 +15,7 @@ deploy:
     api_key: $GITHUB_OAUTH_TOKEN
     file_glob: true
     file:
-    - target/*.jar
+    - img2excel-cli/target/*.jar
     - target/LICENSE
     - target/README.md
     skip_cleanup: true
