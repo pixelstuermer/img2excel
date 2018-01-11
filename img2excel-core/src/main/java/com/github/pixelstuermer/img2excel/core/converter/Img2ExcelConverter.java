@@ -1,6 +1,7 @@
 package com.github.pixelstuermer.img2excel.core.converter;
 
 import java.awt.Color;
+import java.awt.image.PixelGrabber;
 import java.io.File;
 import java.io.IOException;
 
@@ -29,16 +30,26 @@ public class Img2ExcelConverter {
       feedbackHandler = null;
    }
 
-   public void convertImageToExcel() throws IOException {
+   public void convertImageToExcel() throws IOException, InterruptedException {
       imageHandler = new ImageHandler( fileHandler.getSourceFile() );
       feedbackHandler = new FeedbackHandler( imageHandler.getScaledDimension() );
+
+      // TODO refactor PixelGrabber feature
+      int[] pixels = new int[imageHandler.getScaledDimension()];
+      PixelGrabber pixelGrabber = new PixelGrabber( imageHandler.getScaledImage(), 0, 0, imageHandler.getScaledWidth(),
+         imageHandler.getScaledHeight(), pixels, 0, imageHandler.getScaledWidth() );
+      pixelGrabber.grabPixels();
+
+      int counter = 0;
+      System.out.println( pixels.length );
 
       for ( int i = 0; i < imageHandler.getScaledHeight(); i++ ) {
          Row row = sheetsHandler.getMainSheet().createRow( i );
          for ( int k = 0; k < imageHandler.getScaledWidth(); k++ ) {
             feedbackHandler.incrementCounter( k, i );
             Cell cell = row.createCell( k );
-            cell.setCellStyle( createCellStyle( k, i ) );
+            cell.setCellStyle( createCellStyle( pixels[counter] ) );
+            counter++;
          }
       }
 
@@ -46,9 +57,9 @@ public class Img2ExcelConverter {
    }
 
    @SuppressWarnings( "deprecation" )
-   private XSSFCellStyle createCellStyle( int x, int y ) {
+   private XSSFCellStyle createCellStyle( int counterPosition ) {
       XSSFCellStyle cellStyle = sheetsHandler.getWorkbook().createCellStyle();
-      Color color = new Color( imageHandler.getScaledImage().getRGB( x, y ) );
+      Color color = new Color( counterPosition );
       XSSFColor xssfColor = new XSSFColor( color );
       cellStyle.setFillForegroundColor( xssfColor );
       cellStyle.setFillPattern( CellStyle.SOLID_FOREGROUND );
