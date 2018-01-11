@@ -12,13 +12,7 @@ Convert images into `.xlsx` files and create awesome Excel art.
 # Requirements
 For running the command line tool with the terminal, simply [Java](https://java.com/download/) is required. When using the core module as a dependency within another project, the installation of [Lombok](https://projectlombok.org) might be necessary.
 
-# Usage
-To be done.
-
-# Recommendations
-It is recommended to use really small images. Images with the dimensions around  `50*30` pixels are great (yes, this is really small). Although the application scales bigger images down, it is best practice to scale them down before manually. Excel can only handle a limited amount of cell styles which is why images cannot be converted with their original size.
-
-# Example
+# QuickStart
 1. Download the [latest release](https://github.com/pixelstuermer/img2excel/releases/latest) of the command line tool `img2excel-cli-{...}.jar`.
 2. Run the following command from within your terminal: `java -jar /{path}/img2excel-cli-{...}.jar /{path}/{image}.jpg`.
 3. Open the resulting `.xlsx` file after the converter has finished. It is at the same location as the input image file.
@@ -30,3 +24,12 @@ Here is a full command example for version `1.0.0` and the [sample file](https:/
 The command can also be executed from within any other location, giving it the absolute path of the jar and of the image. The Excel file will then be stored at the location of the input image file:
 
     java -jar /some/path/img2excel-cli-1.0.0.jar /another/path/hamnoy_small.jpeg
+
+# Usage CLI Tool
+To be done.
+
+# Usage Java
+To be done.
+
+# Recommendations
+It is recommended to use really small images. Images with the dimensions around  `50*30` pixels are great (yes, this is really small). Although the application scales bigger images down, it is best practice to scale them down before manually. Excel can only handle a limited amount of cell styles which is why images cannot be converted with their original size.
