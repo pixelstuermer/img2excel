@@ -32,4 +32,4 @@ To be done.
 To be done.
 
 # Recommendations
-It is recommended to use really small images. Images with the dimensions around  `50*30` pixels are great (yes, this is really small). Although the application scales bigger images down, it is best practice to scale them down before manually. Excel can only handle a limited amount of cell styles which is why images cannot be converted with their original size.
+It is recommended to use really small images. Images with the dimensions around `60*35` pixels are great (yes, this is really small and will take about 4 minutes). Although the application scales bigger images down, it is best practice to scale them down before manually. Excel can only handle a limited amount of cell styles which is why images cannot be converted with their original size.
