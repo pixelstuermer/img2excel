@@ -26,7 +26,6 @@ public class FileHandler {
       sheetsHandler.getWorkbook().close();
    }
 
-   // TODO what if no file given
    // TODO Print metadata at end
 
 }
