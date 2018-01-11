@@ -7,7 +7,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com)
 
 # img2excel :rocket:
-Convert images into `.xlsx` files and create awesome Excel art.
+Convert images into `.xlsx` files and create awesome Excel art without the usage of macros.
 
 # Requirements
 For running the command line tool with the terminal, simply [Java](https://java.com/download/) is required. When using the core module as a dependency within another project, the installation of [Lombok](https://projectlombok.org) might be necessary.
@@ -26,7 +26,9 @@ The command can also be executed from within any other location, giving it the a
     java -jar /some/path/img2excel-cli-1.0.0.jar /another/path/hamnoy_small.jpeg
 
 # Usage CLI Tool
-To be done.
+The command line tool can handle absolute and relative file paths, and can convert popular image file formats (such as `.jpg`, `.jpeg` or `.png`). It therefore needs the path of the input image file as the only argument:
+
+    java -jar /path/img2excel-cli-{...}.jar /path/{...}.jpg
 
 # Usage Java
 To be done.
