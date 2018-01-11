@@ -50,10 +50,11 @@ public class Img2ExcelConverter {
          }
       }
       long stopMs = System.currentTimeMillis();
+      long duration = (stopMs - startMs) / 1000;
 
       MetaData metaData = MetaData.builder()
          .sourceFile( fileHandler.getSourceFile().getAbsolutePath() )
-         .duration( (stopMs - startMs) / 1000 )
+         .duration( duration )
          .colors( colorsMap.size() )
          .width( imageHandler.getScaledWidth() )
          .height( imageHandler.getScaledHeight() ).build();
