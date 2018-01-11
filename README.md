@@ -31,7 +31,24 @@ The command line tool can handle absolute and relative file paths and can conver
     java -jar /path/img2excel-cli-{...}.jar /path/{...}.jpg
 
 # Usage Java
-To be done.
+When cloning the core module or when using it as a dependency with the help of [Maven](http://maven.apache.org), an installation of [Lombok](https://projectlombok.org) might be necessary. Further on, [JitPack](http://jitpack.io) is helpful for getting Git repositories into your own build:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.pixelstuermer</groupId>
+        <artifactId>img2excel</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+</dependencies>
+```
+
+To instantiate the converter and to convert images, simply run the following:
+
+```java
+Img2ExcelConverter img2ExcelConverter = new Img2ExcelConverter( new File( {...} ) );
+img2ExcelConverter.convertImageToExcel();
+```
 
 # Recommendations
 It is recommended to use really small images. Images with the dimensions around `60*35` pixels are great (yes, this is really small and will take about 4 minutes). Although the application scales bigger images down, it is best practice to scale them down before manually. Excel can only handle a limited amount of cell styles which is why images cannot be converted with their original size.
