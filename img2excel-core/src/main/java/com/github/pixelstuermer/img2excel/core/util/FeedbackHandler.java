@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 import com.github.pixelstuermer.img2excel.core.constants.FileConstants;
+import com.github.pixelstuermer.img2excel.core.model.MetaData;
 
 public class FeedbackHandler {
 
@@ -34,8 +35,8 @@ public class FeedbackHandler {
          + FileConstants.FEEDBACK_CARRIAGE_RETURN );
    }
 
-   public void printMetaData( MetaDataHandler metaDataHandler ) {
-      System.out.println( metaDataHandler.toString() );
+   public void printMetaData( MetaData metaData ) {
+      System.out.println( metaData.toString() );
    }
 
 }

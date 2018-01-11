@@ -61,7 +61,7 @@ public class Img2ExcelConverter {
 
       metaDataHandler = new MetaDataHandler( sheetsHandler, metaData );
       metaDataHandler.writeMetaDataToSheet();
-      feedbackHandler.printMetaData( metaDataHandler );
+      feedbackHandler.printMetaData( metaData );
 
       fileHandler.writeWorkbookToFile( sheetsHandler );
    }
