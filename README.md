@@ -26,7 +26,7 @@ The command can also be executed from within any other location, giving it the a
     java -jar /some/path/img2excel-cli-1.0.0.jar /another/path/hamnoy_small.jpeg
 
 # Usage CLI Tool
-The command line tool can handle absolute and relative file paths, and can convert popular image file formats (such as `.jpg`, `.jpeg` or `.png`). It therefore needs the path of the input image file as the only argument:
+The command line tool can handle absolute and relative file paths and can convert popular image file formats (such as `.jpg`, `.jpeg` or `.png`). It therefore needs the path of the input image file as the only argument:
 
     java -jar /path/img2excel-cli-{...}.jar /path/{...}.jpg
 
