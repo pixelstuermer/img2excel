@@ -2,7 +2,7 @@ package com.github.pixelstuermer.img2excel.core.constants;
 
 public final class ExcelConstants {
 
-   public static final int STYLES_LIMIT = 4000;
+   public static final int STYLES_LIMIT = 2000;
 
    public static final String MAIN_SHEET_NAME = "img2excel";
    public static final int IMAGE_SHEET_ZOOM = 10;
