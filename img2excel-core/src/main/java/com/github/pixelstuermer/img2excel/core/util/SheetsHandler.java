@@ -26,6 +26,7 @@ public class SheetsHandler {
       mainSheet.setDefaultRowHeight( ExcelConstants.MAIN_SHEET_ROW_HEIGHT );
       mainSheet.setZoom( ExcelConstants.IMAGE_SHEET_ZOOM );
       metaDataSheet.setZoom( ExcelConstants.METADATA_SHEET_ZOOM );
+      metaDataSheet.setDefaultColumnWidth( ExcelConstants.METADATA_SHEET_COLUMN_WIDTH );
    }
 
 }

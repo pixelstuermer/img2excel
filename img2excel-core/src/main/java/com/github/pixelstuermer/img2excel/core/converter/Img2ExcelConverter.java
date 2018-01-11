@@ -10,21 +10,25 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
+import com.github.pixelstuermer.img2excel.core.model.MetaData;
 import com.github.pixelstuermer.img2excel.core.util.FeedbackHandler;
 import com.github.pixelstuermer.img2excel.core.util.FileHandler;
 import com.github.pixelstuermer.img2excel.core.util.ImageHandler;
+import com.github.pixelstuermer.img2excel.core.util.MetaDataHandler;
 import com.github.pixelstuermer.img2excel.core.util.SheetsHandler;
 
 public class Img2ExcelConverter {
 
    private FileHandler fileHandler;
    private SheetsHandler sheetsHandler;
+   private MetaDataHandler metaDataHandler;
    private ImageHandler imageHandler;
    private FeedbackHandler feedbackHandler;
 
    public Img2ExcelConverter( File sourceFile ) {
       fileHandler = new FileHandler( sourceFile );
       sheetsHandler = new SheetsHandler();
+      metaDataHandler = null;
       imageHandler = null;
       feedbackHandler = null;
    }
@@ -32,6 +36,8 @@ public class Img2ExcelConverter {
    public void convertImageToExcel() throws IOException {
       imageHandler = new ImageHandler( fileHandler.getSourceFile() );
       feedbackHandler = new FeedbackHandler( imageHandler.getScaledDimension() );
+
+      long startMs = System.currentTimeMillis();
 
       for ( int i = 0; i < imageHandler.getScaledHeight(); i++ ) {
          Row row = sheetsHandler.getMainSheet().createRow( i );
@@ -41,6 +47,21 @@ public class Img2ExcelConverter {
             cell.setCellStyle( createCellStyle( k, i ) );
          }
       }
+
+      long stopMs = System.currentTimeMillis();
+
+      // TODO colors
+
+      MetaData metaData = MetaData.builder()
+         .sourceFile( fileHandler.getSourceFile().getAbsolutePath() )
+         .duration( (stopMs - startMs) / 1000 )
+         .colors( 0 )
+         .width( imageHandler.getScaledWidth() )
+         .height( imageHandler.getScaledHeight() ).build();
+
+      metaDataHandler = new MetaDataHandler( sheetsHandler, metaData );
+      metaDataHandler.writeMetaDataToSheet();
+      feedbackHandler.printMetaData( metaDataHandler );
 
       fileHandler.writeWorkbookToFile( sheetsHandler );
    }

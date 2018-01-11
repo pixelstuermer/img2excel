@@ -26,6 +26,4 @@ public class FileHandler {
       sheetsHandler.getWorkbook().close();
    }
 
-   // TODO Print metadata at end
-
 }

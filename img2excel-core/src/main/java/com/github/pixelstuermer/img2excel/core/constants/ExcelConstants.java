@@ -11,7 +11,11 @@ public final class ExcelConstants {
 
    public static final String METADATA_SHEET_NAME = "metaData";
    public static final int METADATA_SHEET_ZOOM = 100;
-
-   // TODO add metadata key names
+   public static final int METADATA_SHEET_COLUMN_WIDTH = 20;
+   public static final String METADATA_SHEET_KEY_SOURCEFILE = "Source file";
+   public static final String METADATA_SHEET_KEY_DURATION = "Duration (sec)";
+   public static final String METADATA_SHEET_KEY_COLORS = "Colors";
+   public static final String METADATA_SHEET_KEY_WIDTH = "Width";
+   public static final String METADATA_SHEET_KEY_HEIGHT = "Height";
 
 }

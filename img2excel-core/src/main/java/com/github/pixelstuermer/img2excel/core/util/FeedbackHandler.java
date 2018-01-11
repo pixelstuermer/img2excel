@@ -34,4 +34,8 @@ public class FeedbackHandler {
          + FileConstants.FEEDBACK_CARRIAGE_RETURN );
    }
 
+   public void printMetaData( MetaDataHandler metaDataHandler ) {
+      System.out.println( metaDataHandler.toString() );
+   }
+
 }
