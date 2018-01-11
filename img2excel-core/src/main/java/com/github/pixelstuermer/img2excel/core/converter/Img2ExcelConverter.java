@@ -3,6 +3,7 @@ package com.github.pixelstuermer.img2excel.core.converter;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -24,6 +25,7 @@ public class Img2ExcelConverter {
    private MetaDataHandler metaDataHandler;
    private ImageHandler imageHandler;
    private FeedbackHandler feedbackHandler;
+   private HashSet<Integer> colorsMap;
 
    public Img2ExcelConverter( File sourceFile ) {
       fileHandler = new FileHandler( sourceFile );
@@ -31,6 +33,7 @@ public class Img2ExcelConverter {
       metaDataHandler = null;
       imageHandler = null;
       feedbackHandler = null;
+      colorsMap = new HashSet<>();
    }
 
    public void convertImageToExcel() throws IOException {
@@ -38,7 +41,6 @@ public class Img2ExcelConverter {
       feedbackHandler = new FeedbackHandler( imageHandler.getScaledDimension() );
 
       long startMs = System.currentTimeMillis();
-
       for ( int i = 0; i < imageHandler.getScaledHeight(); i++ ) {
          Row row = sheetsHandler.getMainSheet().createRow( i );
          for ( int k = 0; k < imageHandler.getScaledWidth(); k++ ) {
@@ -47,15 +49,12 @@ public class Img2ExcelConverter {
             cell.setCellStyle( createCellStyle( k, i ) );
          }
       }
-
       long stopMs = System.currentTimeMillis();
-
-      // TODO colors
 
       MetaData metaData = MetaData.builder()
          .sourceFile( fileHandler.getSourceFile().getAbsolutePath() )
          .duration( (stopMs - startMs) / 1000 )
-         .colors( 0 )
+         .colors( colorsMap.size() )
          .width( imageHandler.getScaledWidth() )
          .height( imageHandler.getScaledHeight() ).build();
 
@@ -70,6 +69,7 @@ public class Img2ExcelConverter {
    private XSSFCellStyle createCellStyle( int x, int y ) {
       XSSFCellStyle cellStyle = sheetsHandler.getWorkbook().createCellStyle();
       Color color = new Color( imageHandler.getScaledImage().getRGB( x, y ) );
+      colorsMap.add( color.getRGB() );
       XSSFColor xssfColor = new XSSFColor( color );
       cellStyle.setFillForegroundColor( xssfColor );
       cellStyle.setFillPattern( CellStyle.SOLID_FOREGROUND );
